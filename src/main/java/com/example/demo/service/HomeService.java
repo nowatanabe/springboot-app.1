@@ -1,7 +1,10 @@
 package com.example.demo.service;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
+import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
 
 @Service
@@ -13,7 +16,13 @@ public class HomeService {
         this.userRepository = userRepository;
     }
 
-    public String getUserName() {
-        return userRepository.find(1);
+    public User getUser() {
+        Optional<User> user = userRepository.findById(1L);
+        if (user.isPresent()) {
+            return user.get();    
+        }
+        else {
+            return null;
+        }
     }
 }

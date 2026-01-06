@@ -1,10 +1,11 @@
 package com.example.demo.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.entity.User;
+
 @Repository
-public class UserRepository {
-    public String find(int id) {
-        return "渡辺和徳";
-    }
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByName(String name);
 }
