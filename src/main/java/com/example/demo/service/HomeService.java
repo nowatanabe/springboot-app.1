@@ -16,7 +16,16 @@ public class HomeService {
     }
 
     public List<Character> getAllCharacters() {
-        return characterRepository.findAll();
+        List<Character> characters = characterRepository.findAll();
+
+        for (Character character : characters) {
+            if (character.getLevel() > 290) {
+                character.setLevel(300L);
+                characterRepository.save(character);
+            }
+        }
+
+        return characters;
     }
 
 }
