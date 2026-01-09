@@ -1,28 +1,22 @@
 package com.example.demo.service;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.entity.User;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.entity.Character;
+import com.example.demo.repository.CharacterRepository;
 
 @Service
 public class HomeService {
-    private final UserRepository userRepository;
+    private final CharacterRepository characterRepository;
 
-    public HomeService(UserRepository userRepository)
-    {
-        this.userRepository = userRepository;
+    public HomeService(CharacterRepository characterRepository) {
+        this.characterRepository = characterRepository;
     }
 
-    public User getUser() {
-        Optional<User> user = userRepository.findById(1L);
-        if (user.isPresent()) {
-            return user.get();    
-        }
-        else {
-            return null;
-        }
+    public List<Character> getAllCharacters() {
+        return characterRepository.findAll();
     }
+
 }
