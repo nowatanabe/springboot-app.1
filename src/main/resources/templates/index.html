@@ -15,5 +15,11 @@
             <td th:text="${#temporals.format(character.createdAt, 'HH:mm:ss.SSS')}">作成日時</td>
         </tr>
     </table>
+
+    <table>
+        <tr th:each="session1 : ${sessions}">
+            <td th:text="${session1}">session</td>
+        </tr>
+    </table>
 </body>
 </html>
