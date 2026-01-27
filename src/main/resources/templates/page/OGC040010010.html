@@ -2,10 +2,29 @@
 <html lang="ja" xmlns:th="http://www.thmeleaf.org">
 <head>
     <meta charset="utf-8">
+    <script th:src="@{/common/js/commonEventHandler.js}"></script>
+    <script th:src="@{/common/js/messageManager.js}"></script>
+    <script th:src="@{/js/c/OGC040010010.js}"></script>
     <title>xxxx</title>
 </head>
 <body>
+    <form id="reflect-form" method="POST" action="/OGC040010010/reflect">
+        <input id="reflect-text1" type="text"></input>
+        <input id="reflect-text2" type="text"></input>
+        <input type="submit">
+    </form>
+
+    <button id="aaa">ボタン</button>
+
     <table>
+        <caption>セッションデータ</caption>
+        <tr th:each="session1 : ${sessions}">
+            <td th:text="${session1}">session</td>
+        </tr>
+    </table>
+
+    <table>
+        <caption>DBデータ</caption>
         <tr th:each="character : ${characters}">
             <td th:text="${character.id}">ID</td>
             <td th:text="${character.account.name}">名前</td>
@@ -13,12 +32,6 @@
             <td th:text="${character.level}">レベル</td>
             <td th:text="${#temporals.format(character.updatedAt, 'HH:mm:ss.SSS')}">更新日時</td>
             <td th:text="${#temporals.format(character.createdAt, 'HH:mm:ss.SSS')}">作成日時</td>
-        </tr>
-    </table>
-
-    <table>
-        <tr th:each="session1 : ${sessions}">
-            <td th:text="${session1}">session</td>
         </tr>
     </table>
 </body>
