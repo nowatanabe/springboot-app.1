@@ -2,29 +2,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOMContentLoaded: " + event);
     
     document.addEventListener("focusout", (event) => {
-        console.log("focusoutEventHandler");
-        if (funcFocusoutEvent === undefined) {
-        }
-        else {
+        if (funcFocusoutEvent !== undefined) {
             funcFocusoutEvent(event);
         }
     });
 
     document.addEventListener("focusin", (event) => {
-        console.log("focusinEventHandler");
-        if (funcFocusinEvent === undefined) {
-        }
-        else {
+        if (funcFocusinEvent !== undefined) {
             funcFocusinEvent(event);
         }
     });
 
     document.addEventListener("submit", (event) => {
-        console.log("submitEventHandler");
-        if (funcSubmitEvent === undefined) {
-        }
-        else {
-            funcSubmitEvent(event);
+        if (funcSubmitEvent !== undefined) {
+            if (!funcSubmitEvent(event)) {
+                event.preventDefault();
+            }
         }
     });
 });

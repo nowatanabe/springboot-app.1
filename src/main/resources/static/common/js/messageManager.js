@@ -11,12 +11,8 @@ function showOkPopup(popupTitle, messageList) {
     alert("showOkPopup()");
 }
 
-function showOkCancelPopup(message, okFunc) {
-    if (confirm(message)) {
-        console.log("showOKCancelPopup: OK押下");
+function showOkCancelPopup(popupTitle, message, okFunc) {
+    if (confirm(popupTitle + '\n' + message)) {
         okFunc();
-    }
-    else {
-        console.log("showOKCancelPopup: CANCEL押下");
     }
 }
