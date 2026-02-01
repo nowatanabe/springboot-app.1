@@ -30,6 +30,7 @@ public class OGC040010010Controller
     @RequestMapping(value="/OGC040010010/init", method={RequestMethod.GET, RequestMethod.POST})
     public ModelAndView init(HttpSession session, ModelAndView mav) {
         mav.setViewName("page/OGC040010010");
+        mav.addObject("mode", "初期表示要求");
 
         session.setAttribute("hoge", "ほげ");
 
@@ -48,6 +49,7 @@ public class OGC040010010Controller
     @RequestMapping(value="/OGC040010010/search", method={RequestMethod.GET, RequestMethod.POST})
     public ModelAndView search(HttpSession session, ModelAndView mav) {
         mav.setViewName("page/OGC040010010");
+        mav.addObject("mode", "検索要求");
 
 
         return mav;
@@ -56,6 +58,17 @@ public class OGC040010010Controller
     @RequestMapping(value="/OGC040010010/reflect", method={RequestMethod.GET, RequestMethod.POST})
     public ModelAndView reflect(HttpSession session, ModelAndView mav) {
         mav.setViewName("page/OGC040010010");
+        mav.addObject("mode", "実行要求（反映）");
+
+        return mav;
+    }
+
+
+    @RequestMapping(value="/OGC040010010/notify", method={RequestMethod.GET, RequestMethod.POST})
+    public ModelAndView notify(HttpSession session, ModelAndView mav) {
+        mav.setViewName("page/OGC040010010");
+        mav.addObject("mode", "実行要求（予告）");
+
 
         return mav;
     }

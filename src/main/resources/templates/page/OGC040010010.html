@@ -8,13 +8,14 @@
     <title>xxxx</title>
 </head>
 <body>
+    <td th:text="${mode}">モード</td>
     <form id="OGC040010010Form" method="POST">
         <input id="reflect-text1" type="text"></input>
         <input id="reflect-text2" type="text"></input>
         <input type="submit" value="初期表示要求" data-action="/OGC040010010/init">
         <input type="submit" value="検索要求" data-action="/OGC040010010/search">
         <input type="submit" value="実行要求（反映）" data-action="/OGC040010010/reflect">
-        <input type="submit" value="実行要求（予告）" data-action="/OGC040010010/notity">
+        <input type="submit" value="実行要求（予告）" data-action="/OGC040010010/notify">
     </form>
 
     <button id="aaa">ボタン</button>
