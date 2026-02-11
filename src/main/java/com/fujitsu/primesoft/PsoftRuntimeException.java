@@ -1,5 +1,5 @@
 package com.fujitsu.primesoft;
 
-public class PsoftRuntimeException {
+public class PsoftRuntimeException extends java.lang.RuntimeException {
 
 }

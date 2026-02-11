@@ -1,5 +1,5 @@
 package com.fujitsu.primesoft;
 
-public class PsoftAtEndException {
+public class PsoftAtEndException extends PsoftException {
 
 }
