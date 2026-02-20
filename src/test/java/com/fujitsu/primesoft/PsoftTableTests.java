@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import com.example.demo.entity.RaceCourseEntity;
 import com.example.demo.entity.RaceCourseIndexEntity;
-import com.fujitsu.primesoft.PsoftNonePartition;
 import com.fujitsu.primesoft.PsoftTable.PsoftWaitMode;
 import com.fujitsu.primesoft.condition.PsoftKEQ;
 
