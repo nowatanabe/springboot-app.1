@@ -5,10 +5,10 @@ import java.util.List;
 import jp.go.jra.totalizator.common.core.message.CommonMessageInfo;
 import jp.go.jra.totalizator.common.online.service.OnlineServiceInputDto;
 import jp.go.jra.totalizator.common.online.service.OnlineServiceOutputDto;
-import jp.go.jra.totalizator.common.online.socket.BaseSocketOnlineController;
+import jp.go.jra.totalizator.common.online.socket.BaseNarSocketOnlineController;
 import jp.go.jra.totalizator.common.online.socket.CommonSocketRequest;
 
-public class OSC030103001Controller extends BaseSocketOnlineController<Nar87Message, OSC030103001InputBizPart, OSC030103001OutputBizPart> {
+public class OSC030103001Controller extends BaseNarSocketOnlineController<Nar87Message, OSC030103001InputBizPart, OSC030103001OutputBizPart> {
     public OSC030103001Controller() {
         super(null);
     }
